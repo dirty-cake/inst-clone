@@ -1,12 +1,19 @@
 import Koa from 'koa'
-import User from './db/models/User.js'
+import models from './db/index.js'
+import body from 'koa-body'
+import users from './api/users.js'
+import posts from './api/posts.js'
 
 const app = new Koa()
 
-app.use(function (){
-  this.body = "Hello World !!!";
-});
+app.use(body())
 
-console.log(User)
+app.use(async (ctx, next) => {
+  ctx.state.models = models
+  await next()
+})
+
+app.use(users.routes())
+app.use(posts.routes())
 
 app.listen(3000, () => console.log('Server successfully started'))

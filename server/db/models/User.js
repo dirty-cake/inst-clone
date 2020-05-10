@@ -4,7 +4,7 @@ export default class User extends Model {
   static tableName = 'users'
 
   static relationMappings = {
-    children: {
+    posts: {
       relation: Model.HasManyRelation,
       modelClass: 'Post',
       join: {
@@ -12,5 +12,11 @@ export default class User extends Model {
         to: 'posts.user_id'
       }
     }
+  }
+
+  $formatJson(model, options) {
+    const user = super.$formatJson(model, options)
+    delete user.password
+    return user
   }
 } 

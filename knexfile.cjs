@@ -1,5 +1,4 @@
 exports.dev = {
-  ext: 'cjs',
   client: 'pg',
   connection: {
     host: 'localhost',
