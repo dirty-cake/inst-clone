@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "knex": "^0.21.0",
     "koa": "^2.11.0",
@@ -11,9 +12,8 @@
     "pg": "^8.0.3"
   },
   "scripts": {
-    "server": "node ./server"
+    "server": "node ./server",
+    "knex": "knex --esm --env dev --knexfile knexfile.cjs"
   },
-  "devDependencies": {
-    "knex-migrate": "^1.7.4"
-  }
+  "devDependencies": {}
 }

@@ -1,5 +1,4 @@
-
-export async function up (knex) {
+exports.up = async function (knex) {
   await knex.schema.createTable('users', table => {
     table.increments('id').primary()
     table.string('full_name')
@@ -18,7 +17,7 @@ export async function up (knex) {
   })
 }
 
-export async function down (knex) {
+exports.down = async function (knex) {
   await knex.schema.dropTable('posts')
   await knex.schema.dropTable('users')
 }
