@@ -9,6 +9,6 @@ exports.dev = {
   migrations: {
     loadExtensions: ['.cjs'],
     extension: 'cjs',
-    directory: './server/db/migrations'
+    directory: './db/migrations'
   }
 }
