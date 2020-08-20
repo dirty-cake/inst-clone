@@ -9,7 +9,7 @@
     "knex": "knex --esm --env dev --knexfile knexfile.cjs"
   },
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.0",
     "koa": "^2.11.0",
